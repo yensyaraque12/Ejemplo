@@ -1,0 +1,44 @@
+dentro del evento del combo box de centro:
+objauto.centro = cmbCentro.SelectedValue.ToString();
+            dgvListarDtos.DataSource = objauto.mtdListar(objauto.centro);
+
+la consulta del metodo:
+else if (tipo==centro)
+            {
+                consulta = "select IdAutomovil,Placa,Modelo,Color,Tipo,Centro from Automovil inner join Centro on Centro.Idcentro = Automovil.Idcentro where Centro = '"+centro+"'";
+            }
+
+
+  SqlConnection conexion;
+        SqlDataAdapter adaptador;
+        SqlCommand cmdRegistrar;
+
+        public clBDSql()
+        {
+            conexion = new SqlConnection("Data Source=DESKTOP-CO2H4VC;Initial Catalog=BDDistribuidora;Integrated Security=True");
+        }
+
+
+
+        public DataTable mtdSelect(string consulta)
+        {
+            conexion.Open();
+            adaptador = new SqlDataAdapter(consulta, conexion);
+            DataTable tblDatos = new DataTable();
+            adaptador.Fill(tblDatos);
+            conexion.Close();
+            return tblDatos;
+        }
+
+
+
+        public int mtdIDU(string consulta)
+        {
+            conexion.Open();
+            cmdRegistrar = new SqlCommand();
+            cmdRegistrar.Connection = conexion;
+            cmdRegistrar.CommandText = consulta;
+            int cantidad = cmdRegistrar.ExecuteNonQuery();
+            conexion.Close();
+            return cantidad;
+        }
