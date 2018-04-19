@@ -1,0 +1,50 @@
+cuadrar las resoluciones 832,480
+show grid 
+Agregar el marco 
+duplicarlos (nombre)
+crear rojo selector
+crear azul mouse Selector
+insertar mouse 
+crear grupo menu 
+------------------------------
+-añadir evento slot cursor is over -añadir accion Mouse selector set position to another object slot
+-Set visible
+ ------------------------------
+-añadir evento mouse cursor is over invertir 
+-Añadir accion mouse selector set invisible
+----------------------------------
+-Añadir evento mouse cursor on object clicked left select slot
+add event set position to another object slot
+------------------------------------
+Añadir grupo creacion de objetos 
+====================
+crear tiledbackground
+-añadir los tiles (34,34)
+-centro origen
+-añadir evento mouse mouse button is down 
+-crear una variable selectorpos
+-Añadir dandole doble click selector compare instance variable = 0
+ir a tercer evento de mouse set value selector set value 0 x slot.IID (se define como la identificacion unica de cada slot y que el programa sepa que en que slot se va a hacer dicho proceso)
+-doble click event mouse cursor  is over tiled background
+-Añadir familia (objetos solidos)
+menos slots  
+-doble click cursor is over familia 
+e invertir 
+-doble click system create object
+primer tile del slot 
+x{floor (Mouse.X/32)*32-16}
+Y{floor (Mouse.Y/32)*32-16}
+codigo para determinar en donde va a crear el objeto 
+Duplicar y cambiar el selectorpos y la imagen del tile
+=======================
+Eliminacion de objetos (Grupo)
+crear evento mouse >mouse button is down Right 
+doble click >cursor is over object tiled background
+añadir evento> mouse is over family
+añadir accion >objetos (familia) destroy
+quick assing todos los tiles origen en middle 
+
+
+
+
+
